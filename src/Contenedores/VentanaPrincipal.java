@@ -6,8 +6,13 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import java.awt.Color;
+import java.awt.Dimension;
+
 import javax.swing.JLabel;
 import java.awt.Font;
+import java.awt.Rectangle;
+import java.awt.Toolkit;
+
 import javax.swing.SwingConstants;
 import javax.swing.border.LineBorder;
 import javax.swing.border.SoftBevelBorder;
@@ -18,8 +23,9 @@ import java.awt.event.ActionEvent;
 
 public class VentanaPrincipal extends JFrame {
 
-	private JPanel Contenedor;
-
+	private Dimension tamPantalla; //para dimensionar a toda la pantalla
+	private Rectangle pantalla; //
+	
 	
 
 	/**
@@ -27,17 +33,21 @@ public class VentanaPrincipal extends JFrame {
 	 */
 	public VentanaPrincipal() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 450, 300);
-		Contenedor = new JPanel();
-		Contenedor.setBorder(new EmptyBorder(5, 5, 5, 5));
-
-		setContentPane(Contenedor);
-		Contenedor.setLayout(null);
+		//setBounds(100, 100, 450, 300);
+		setTitle("Ventana Principal"); 
+		setSize(650,342);
+		setLocationRelativeTo(null);
+		tamPantalla = Toolkit.getDefaultToolkit().getScreenSize(); //adaptar al tamaño de la pantalla
+		pantalla = new Rectangle(tamPantalla); 
+		setBounds(pantalla); 
 		
+		 
 		JPanel miPanel = new JPanel();
+		setContentPane(miPanel);
+		
 		miPanel.setBackground(new Color(128, 255, 128));
 		miPanel.setBounds(0, 0, 434, 261);
-		Contenedor.add(miPanel);
+		
 		miPanel.setLayout(null);
 		
 		JLabel lblNewLabel = new JLabel("Bienvenido al sistema");

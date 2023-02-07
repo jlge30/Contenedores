@@ -30,8 +30,12 @@ public class VentanaLogin extends JDialog {
 	/**
 	 * Create the dialog.
 	 */
-	public VentanaLogin() {
+	public VentanaLogin(java.awt.Frame parent, boolean modal) {
+		super(parent, modal); //para que se quede en la ventana principal
 		setBounds(100, 100, 287, 411);
+		setSize(300, 420); 
+		setTitle("Login"); 
+		setLocationRelativeTo(null); //en el centro de la pantalla
 		getContentPane().setLayout(new BorderLayout());
 		ventanaLogin.setBorder(new EmptyBorder(5, 5, 5, 5));
 		getContentPane().add(ventanaLogin, BorderLayout.CENTER);
