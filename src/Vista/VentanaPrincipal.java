@@ -1,4 +1,4 @@
-package Contenedores;
+package Vista;
 
 import java.awt.EventQueue;
 
@@ -39,7 +39,7 @@ public class VentanaPrincipal extends JFrame {
 		setLocationRelativeTo(null);
 		tamPantalla = Toolkit.getDefaultToolkit().getScreenSize(); //adaptar al tamaño de la pantalla
 		pantalla = new Rectangle(tamPantalla); 
-		setBounds(pantalla); 
+		setBounds(pantalla); //ajustamos al tamaño de la pantalla.
 		
 		 
 		JPanel miPanel = new JPanel();
